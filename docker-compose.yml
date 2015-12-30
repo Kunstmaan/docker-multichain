@@ -10,7 +10,7 @@ slavenode1:
     links:
         - masternode
 
-slavenode1:
+slavenode2:
     image: kunstmaan/multichain:node
     links:
         - masternode
