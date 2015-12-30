@@ -3,7 +3,7 @@ masternode:
     expose:
         - "7447"
     ports:
-        - "8000"
+        - "8000:8000"
 
 slavenode1:
     image: kunstmaan/multichain:node
