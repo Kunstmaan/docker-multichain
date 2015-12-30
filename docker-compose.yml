@@ -1,0 +1,21 @@
+master:
+    image: kunstmaan/multichain:master
+    ports:
+        - 9571
+        - 9570
+
+node1:
+    image: kunstmaan/multichain:node
+    links:
+        - master
+
+node2:
+    image: kunstmaan/multichain:node
+    links:
+        - master
+
+node3:
+    image: kunstmaan/multichain:base
+    links:
+        - master
+    tty: true
