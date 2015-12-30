@@ -5,7 +5,7 @@ RUN multichain-util create dockerchain
 ADD ./params.dat /root/.multichain/dockerchain/params.dat
 ADD ./multichain.conf /root/.multichain/dockerchain/multichain.conf
 
-EXPOSE 9571
-EXPOSE 9570
+EXPOSE 7447
+EXPOSE 8000
 
 CMD ["multichaind", "dockerchain"]
