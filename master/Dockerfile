@@ -8,4 +8,4 @@ ADD ./multichain.conf /root/.multichain/dockerchain/multichain.conf
 EXPOSE 7447
 EXPOSE 8000
 
-CMD ["multichaind", "dockerchain"]
+CMD ["multichaind", "dockerchain", "-printtoconsole"]

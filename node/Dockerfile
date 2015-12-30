@@ -1,4 +1,6 @@
 FROM kunstmaan/multichain:base
 MAINTAINER Roderik van der Veer
 
-CMD ["multichaind", "dockerchain@masternode:7447"]
+ADD ./connect-node.sh /root/connect-node.sh
+
+CMD ["/bin/bash", "/root/connect-node.sh"]
