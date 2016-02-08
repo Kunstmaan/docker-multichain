@@ -1,4 +1,4 @@
-FROM kunstmaan/multichain:base
+FROM kunstmaan/base-multichain
 MAINTAINER Roderik van der Veer
 
 RUN multichain-util create dockerchain
