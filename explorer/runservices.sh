@@ -11,6 +11,4 @@ echo "rpcport=8000" >> /root/.multichain/dockerchain/multichain.conf
 cp /root/.multichain/dockerchain/multichain.conf /root/.multichain/multichain.conf
 
 python -m Abe.abe --config /root/explorer.conf --commit-bytes 100000 --no-serve
-python -m Abe.abe --config /root/explorer.conf &
-
-bash
+python -m Abe.abe --config /root/explorer.conf
