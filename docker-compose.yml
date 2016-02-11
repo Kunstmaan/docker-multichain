@@ -1,16 +1,34 @@
-masternode:
-    image: kunstmaan/master-multichain
-    expose:
-        - "7447"
-    ports:
-        - "8000:8000"
+version: '2'
 
-slavenode1:
-    image: kunstmaan/node-multichain
-    links:
-        - masternode
-
-slavenode2:
-    image: kunstmaan/node-multichain
-    links:
-        - masternode
+services:
+    masternode:
+        image: kunstmaan/master-multichain
+        expose:
+            - "7447"
+            - "8000"
+    environment:
+        VIRTUAL_HOST: mulichain-master.docker
+        VIRTUAL_PORT: 8000
+    explorer:
+        image: kunstmaan/explorer-multichain
+        depends_on:
+            - masternode
+        expose:
+            - "2750"
+        environment:
+            VIRTUAL_HOST: multichain-explorer.docker
+            VIRTUAL_PORT: 2750
+        links:
+            - masternode
+    slavenode1:
+        image: kunstmaan/node-multichain
+        depends_on:
+            - masternode
+        links:
+            - masternode
+    slavenode2:
+        image: kunstmaan/node-multichain
+        depends_on:
+            - masternode
+        links:
+            - masternode
