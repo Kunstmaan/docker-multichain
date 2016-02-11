@@ -6,9 +6,9 @@ services:
         expose:
             - "7447"
             - "8000"
-    environment:
-        VIRTUAL_HOST: mulichain-master.docker
-        VIRTUAL_PORT: 8000
+        environment:
+            VIRTUAL_HOST: mulichain-master.docker
+            VIRTUAL_PORT: 8000
     explorer:
         image: kunstmaan/explorer-multichain
         depends_on:
