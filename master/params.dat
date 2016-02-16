@@ -13,7 +13,7 @@
 # Basic chain parameters
 
 chain-protocol = multichain             # Chain protocol: multichain (permissions, native assets) or bitcoin
-chain-description = MultiChain Dockerchain # Chain description, embedded in genesis block coinbase, max 256 chars.
+chain-description = Dockerchain # Chain description, embedded in genesis block coinbase, max 256 chars.
 chain-is-testnet = false                # Content of the 'testnet' field of API responses, for compatibility.
 target-block-time = 15                  # Target time between blocks (transaction confirmation delay), seconds. (5 - 86400)
 maximum-block-size = 1000000            # Maximum block size in bytes. (1000 - 1000000000)
