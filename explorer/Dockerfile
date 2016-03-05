@@ -2,7 +2,7 @@ FROM kunstmaan/node-multichain
 MAINTAINER Roderik van der Veer
 
 RUN apt-get update \
-        && apt-get install -q -y python python-dev python-pip \
+        && apt-get install -q -y python python-dev python-pip sqlite3 libsqlite3-dev \
         && pip install pycrypto \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
@@ -15,9 +15,7 @@ RUN cd /root \
 ADD ./explorer.conf /root/explorer.conf
 
 RUN cd /root/multichain-explorer-master \
-    && python setup.py install \
-    && rm -Rf /usr/local/lib/python2.7/dist-packages/Mce/htdocs \
-    && ln -sf /root/multichain-explorer-master/Mce/htdocs /usr/local/lib/python2.7/dist-packages/Mce/htdocs
+    && python setup.py install --user
 
 ADD ./runservices.sh /root/runservices.sh
 
