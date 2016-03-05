@@ -16,8 +16,8 @@ ADD ./explorer.conf /root/explorer.conf
 
 RUN cd /root/multichain-explorer-master \
     && python setup.py install \
-    && rm -Rf /usr/local/lib/python2.7/dist-packages/Abe/htdocs \
-    && ln -sf /root/multichain-explorer-master/Abe/htdocs /usr/local/lib/python2.7/dist-packages/Abe/htdocs
+    && rm -Rf /usr/local/lib/python2.7/dist-packages/Mce/htdocs \
+    && ln -sf /root/multichain-explorer-master/Mce/htdocs /usr/local/lib/python2.7/dist-packages/Mce/htdocs
 
 ADD ./runservices.sh /root/runservices.sh
 
