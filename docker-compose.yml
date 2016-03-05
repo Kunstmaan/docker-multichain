@@ -3,6 +3,7 @@ version: '2'
 services:
     masternode:
         image: kunstmaan/master-multichain
+        build: ./master
         ports:
             - "7447:7447"
             - "8000:8000"
@@ -11,6 +12,7 @@ services:
             VIRTUAL_PORT: 8000
     explorer:
         image: kunstmaan/explorer-multichain
+        build: ./explorer
         depends_on:
             - masternode
         ports:
@@ -22,12 +24,14 @@ services:
             - masternode
     slavenode1:
         image: kunstmaan/node-multichain
+        build: ./node
         depends_on:
             - masternode
         links:
             - masternode
     slavenode2:
         image: kunstmaan/node-multichain
+        build: ./node
         depends_on:
             - masternode
         links:
