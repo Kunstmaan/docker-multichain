@@ -13,5 +13,4 @@ rpcport=$RPC_PORT
 EOF
 
 echo "Start the chain"
-IPADDR=`getent hosts $MASTER_NODE | awk -F' ' '{print $1}'`
-multichaind -txindex -printtoconsole -shrinkdebugfilesize $CHAINNAME@$IPADDR:$NETWORK_PORT
+multichaind -txindex -printtoconsole -shrinkdebugfilesize $CHAINNAME@$MASTER_NODE:$NETWORK_PORT

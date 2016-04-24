@@ -4,8 +4,7 @@ echo "Sleep for 30 seconds so the master node has initialised"
 sleep 30
 
 echo "Start the chain"
-IPADDR=`getent hosts $MASTER_NODE | awk -F' ' '{print $1}'`
-multichaind -daemon -txindex -shrinkdebugfilesize $CHAINNAME@$IPADDR:$NETWORK_PORT
+multichaind -daemon -txindex -shrinkdebugfilesize $CHAINNAME@$MASTER_NODE:$NETWORK_PORT
 
 echo "Sleep for 30 seconds so the slave node has initialised"
 sleep 30
