@@ -1,11 +1,7 @@
 FROM kunstmaan/base-multichain
 MAINTAINER Roderik van der Veer
 
-RUN multichain-util create dockerchain
-ADD ./params.dat /root/.multichain/dockerchain/params.dat
-ADD ./multichain.conf /root/.multichain/dockerchain/multichain.conf
+ADD ./runchain.sh /root/runchain.sh
+RUN chmod a+x /root/runchain.sh
 
-EXPOSE 7447
-EXPOSE 8000
-
-CMD ["multichaind", "dockerchain", "-shrinkdebugfilesize", "-printtoconsole"]
+CMD ["/bin/bash", "/root/runchain.sh"]

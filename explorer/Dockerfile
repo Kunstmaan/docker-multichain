@@ -12,13 +12,12 @@ RUN cd /root \
     && tar -xvzf master.tar.gz \
     && rm -Rf master.tar.gz
 
-ADD ./explorer.conf /root/explorer.conf
-
 RUN cd /root/multichain-explorer-master \
     && python setup.py install --user
 
-ADD ./runservices.sh /root/runservices.sh
+ADD ./runexplorer.sh /root/runexplorer.sh
+RUN chmod a+x /root/runexplorer.sh
 
 EXPOSE 2750
 
-CMD ["/bin/bash", "-x", "/root/runservices.sh"]
+CMD ["/bin/bash", "/root/runexplorer.sh"]
