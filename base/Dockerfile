@@ -1,4 +1,4 @@
-FROM ubuntu:wily
+FROM ubuntu:xenial
 MAINTAINER Roderik van der Veer
 
 ENV DEBIAN_FRONTEND noninteractive
