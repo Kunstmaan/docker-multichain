@@ -51,6 +51,8 @@ if [ ! -d /root/.multichain/$CHAINNAME ]; then
 
 fi
 
+cat /root/.multichain/$CHAINNAME/params.dat
+
 cat << EOF > /root/.multichain/$CHAINNAME/multichain.conf
 rpcuser=$RPC_USER
 rpcpassword=$RPC_PASSWORD
