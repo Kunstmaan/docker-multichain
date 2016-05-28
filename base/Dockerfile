@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
         && apt-get upgrade -q -y \
         && apt-get dist-upgrade -q -y \
-        && apt-get install -q -y wget \
+        && apt-get install -q -y wget curl \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/* \
         && cd /tmp \
