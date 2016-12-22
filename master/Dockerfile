@@ -1,5 +1,5 @@
 FROM kunstmaan/base-multichain
-MAINTAINER Roderik van der Veer
+MAINTAINER Kunstmaan
 
 COPY ./runchain.sh /root/runchain.sh
 COPY ./blocknotify.sh /root/blocknotify.sh

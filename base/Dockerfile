@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER Roderik van der Veer
+MAINTAINER Kunstmaan
 
 ENV DEBIAN_FRONTEND noninteractive
 
