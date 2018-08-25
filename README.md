@@ -117,3 +117,7 @@ To configure your chain, we use environment variables.
 * RPC_PASSWORD: 79pgKQusiH3VDVpyzsM6e3kRz6gWNctAwgJvymG3iiuz
 * RPC_ALLOW_IP: 0.0.0.0/0.0.0.0
 * MASTERNODE: masternode   # IP address of the master node, or a docker compose link. Don't forget the links section!
+
+### Multichain Web Demo
+
+[Multichain Web Demo](https://github.com/MultiChain/multichain-web-demo) is installed on the Masternode and is available at [http://localhost:8080/multichain-web-demo](http://localhost:8080/multichain-web-demo)
