@@ -66,4 +66,14 @@ fi
 
 cp /root/.multichain/$CHAINNAME/multichain.conf /root/.multichain/multichain.conf
 
+cat << EOF > /var/www/html/multichain-web-demo/config.txt
+default.name=$CHAINNAME
+default.rpchost=127.0.0.1
+default.rpcport=$RPC_PORT
+default.rpcuser=$RPC_USER
+default.rpcpassword=$RPC_PASSWORD
+EOF
+
+service apache2 start
+
 multichaind -txindex -shrinkdebugfilesize -printtoconsole $CHAINNAME
