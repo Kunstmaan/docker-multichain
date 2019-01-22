@@ -1,4 +1,4 @@
-FROM kunstmaan/base-multichain
+FROM i3visio/base-multichain
 MAINTAINER Kunstmaan
 
 COPY ./runchain.sh /root/runchain.sh
